@@ -3,12 +3,12 @@ package com.precode.unitpage
 import groovy.sql.Sql
 
 class CmsSql {
-	def url = ''
-	def user = ''
-	def password = ''
-	def driver = ''
+	def url = 'jdbc:mysql://db4free.net:3306/precore'
+	def user = 'precore'
+	def password = '51158128'
+	def driver = 'com.mysql.jdbc.Driver'
 	
-	def escapeStr = '`'
+	def escapeStr = ''
 	
 	
 	List query( query ) {
