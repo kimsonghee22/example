@@ -1,0 +1,18 @@
+<h1>list</h1>
+
+<table th:action="@{/insert}">
+	<tr>
+		<td>id</td>
+		<td>title</td>
+		<td>user</td>
+	</tr>
+	
+	<tr th:each="list: ${list}">
+		<td th:text="${list.id}"></td>
+		<td th:text="${list.title}"></td>
+		<td th:text="${list.user}"></td>
+	</tr>
+</table>
+
+<a th:href="@{/update}"></a>
+<a th:href="@{/delete}"></a>
