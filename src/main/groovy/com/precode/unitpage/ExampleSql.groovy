@@ -3,12 +3,12 @@ package com.precode.unitpage
 import groovy.sql.Sql;
 import org.springframework.stereotype.Component
 
-@Component //ºÎÇ°
+@Component //ï¿½ï¿½Ç°
 class ExampleSql {
 
-	def url = 'jdbc:mysql://qoov.iptime.org:33306/example'
-	def user = 'root'
-	def password = '51158128'
+	def url = 'jdbc:mysql://49.247.203.238:3306/nksc'
+	def user = 'nksc'
+	def password = 'nkscnksc'
 	def driver = 'com.mysql.jdbc.Driver'
 
 	List query( query ) {
