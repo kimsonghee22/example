@@ -7,10 +7,6 @@ import org.springframework.boot.web.support.SpringBootServletInitializer
 import org.springframework.context.annotation.ComponentScan
 
 @SpringBootApplication
-<<<<<<< HEAD
-
-=======
->>>>>>> 796f582c17cfaacb2cc228c3e7391da44db2dea1
 @ComponentScan(basePackages = "com.precode.unitpage")
 class UnitpageApplication extends SpringBootServletInitializer {
 
