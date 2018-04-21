@@ -3,7 +3,7 @@ package com.precode.unitpage
 import groovy.sql.Sql;
 import org.springframework.stereotype.Component
 
-@Component
+@Component //ºÎÇ°
 class ExampleSql {
 
 	def url = 'jdbc:mysql://qoov.iptime.org:33306/example'

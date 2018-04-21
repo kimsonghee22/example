@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+
+minsu/index
+
+<table>
+	<tr>
+		<td>id</td>
+		<td>title</td>
+		<td>content</td>
+	<tr>
+	
+	<tr th:each="list: ${boardList}>
+		<td th:text="${list.id}"></td>
+		<td th:text="${list.title}"></td>
+		<td th:text="${list.content}"></td>
+	<tr>
+</table>
+
+
+<div>
+	${boardMap.id}
+	${boardMap.title}
+</div>
+
+
+</body>
+</html>
