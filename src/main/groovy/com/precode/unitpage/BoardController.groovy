@@ -8,25 +8,18 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 
 @Controller
-@RequestMapping("Board/{url}")
+@RequestMapping("Board")
 class BoardController {
 	
 	@Autowired
 	ExampleSql sql = new ExampleSql()
 
 	
-	@RequestMapping("list")
-	String list(@RequestParam Map params, @PathVariable String url, Model model) {
-		List list = sql.row("select * from board where id=$params.id and url=$url")
-		model.addAttribute("list", list)
-		return "board/list"
-	}
-	
-	@RequestMapping("view")
-	String view(@RequestParam Map params, @PathVariable String url, Model model){
-		Map view = sql.row("select * from board where id=$params.id")	
-		model.addAttribute("map", view)
-		return "board/view"
+	@RequestMapping("{url}")
+	String map(@RequestParam Map params, @PathVariable String url, Model model) {
+		Map map = sql.row("select * from nksc.board where id=$params.id")
+		model.addAttribute("map", map)
+		return "board/map"
 	}
 		
 

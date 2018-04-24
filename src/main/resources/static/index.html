@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8"/>
-    <title>별빛청소</title>
-</head>
-<body>
-<!-- Header -->
-Header<br/>
-<!-- Main -->
-Main<br/>
-<!-- Footer -->
-Footer<br/>
-</body>
-</html>
+<h1>한글</h1>
+
+<div th:each="board: ${board}">	
+	<a th:href="@{'/Board/'+${board.title}(id=${board.id})}" th:text="${board.title}"></a>
+	
+</div>

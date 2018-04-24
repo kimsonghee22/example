@@ -3,6 +3,7 @@ package com.precode.unitpage
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
+import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.RequestMapping
 
 
@@ -13,10 +14,10 @@ class IndexController {
 	ExampleSql sql = new ExampleSql();
 	
 	@RequestMapping("/")
-	public String index() {
-		List board = sql.query("select * from board")
-			
-		println board
+	public String index(Model model) {
+		List board = sql.query("select * from nksc.board")
+		
+		model.addAttribute("board", board)
 		return "index"
 	}
 	
