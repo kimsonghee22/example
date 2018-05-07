@@ -17,12 +17,11 @@
 	</tr>
 
 	<tr>
-		<td>url</td>
-		<td th:text="${map.url}"></td>
-	</tr>
-	
-	<tr>
 		<td>createDate</td>
 		<td th:text="${map.createDate}"></td>
 	</tr>	
 </table>
+
+<nav>
+	<a role="button" th:href="@{update(id=${map.id})}" th:text="수정" >수정</a>
+</nav>

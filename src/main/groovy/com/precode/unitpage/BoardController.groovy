@@ -15,11 +15,18 @@ class BoardController {
 	ExampleSql sql = new ExampleSql()
 
 	
-	@RequestMapping("{url}")
-	String map(@RequestParam Map params, @PathVariable String url, Model model) {
+	@RequestMapping("/")
+	String select(@RequestParam Map params, Model model) {
 		Map map = sql.row("select * from nksc.board where id=$params.id")
 		model.addAttribute("map", map)
 		return "board/map"
+	}
+	
+	@RequestMapping("/update")
+	String update(@RequestParam Map params, Model model) {
+		Map update = sql.row("select * from nksc.board where id=$params.id")
+		model.addAttribute("update", update)
+		return "board/update"
 	}
 		
 

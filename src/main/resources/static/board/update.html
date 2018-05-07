@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+
+<table class="table" action="/updateOk">
+	<tr>
+		<td>id</td>
+		<td><input th:value="${update.id}" readonly="readonly"/></td>
+	</tr>
+	
+	<tr>
+		<td>title</td>
+		<td><input th:value="${update.title}"/></td>
+	</tr>
+	
+	<tr>
+		<td>content</td>
+		<td><input th:value="${update.content}"/></td>
+	</tr>
+
+	<tr>
+		<td>createDate</td>
+		<td><input th:value="${update.createDate}" readonly="readonly"/></td>
+	</tr>	
+</table>
