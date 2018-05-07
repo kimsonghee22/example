@@ -1,5 +1,3 @@
-<h1>한글</h1>
-
 <div th:each="board: ${board}">	
 	<a th:href="@{'/Board/'+${board.title}(id=${board.id})}" th:text="${board.title}"></a>
 	
