@@ -1,4 +1,6 @@
 <div th:each="board: ${board}">	
-	<a th:href="@{'/Board/'+${board.title}(id=${board.id})}" th:text="${board.title}"></a>
+	<a th:href="@{/Board/(id=${board.id})}" th:text="${board.title}"></a>
 	
 </div>
+<hr/>
+<a th:href="@{/Board/insert}">추가</a>

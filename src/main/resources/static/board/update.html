@@ -1,23 +1,30 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
 
-<table class="table" action="/updateOk">
+<form th:action="@{updateOk}">
+<table class="table">
 	<tr>
 		<td>id</td>
-		<td><input th:value="${update.id}" readonly="readonly"/></td>
+		<td><input name="id" th:value="${update.id}" readonly="readonly"/></td>
 	</tr>
 	
 	<tr>
 		<td>title</td>
-		<td><input th:value="${update.title}"/></td>
+		<td><input name="title" th:value="${update.title}"/></td>
 	</tr>
 	
 	<tr>
 		<td>content</td>
-		<td><input th:value="${update.content}"/></td>
+		<td><input name="content" th:value="${update.content}"/></td>
 	</tr>
 
 	<tr>
 		<td>createDate</td>
-		<td><input th:value="${update.createDate}" readonly="readonly"/></td>
+		<td><input name="createDate" th:value="${update.createDate}" readonly="readonly"/></td>
 	</tr>	
 </table>
+
+<nav>
+	<input type="submit" value="수정완료"/>
+	<a th:href="@{/}">목록으로</a>
+</nav>
+</form>
