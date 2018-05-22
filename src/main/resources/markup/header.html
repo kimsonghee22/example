@@ -1,13 +1,8 @@
 <style>
-    /*
-http://meyerweb.com/eric/tools/css/reset/
-v2.0 | 20110126
-License: none (public domain)
-*/
     html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
     small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
     article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
-    {margin:0;padding:0;border:0;font-size:100%;font-weight:normal;vertical-align:baseline}
+    {margin:0;padding:0;border:0;font-size:16px;font-weight:normal;vertical-align:baseline}
     /* HTML5 display-role reset for older browsers */
     article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display: block}
     body{line-height:1.5}
@@ -15,7 +10,8 @@ License: none (public domain)
     blockquote, q{quotes:none}
     blockquote:before, blockquote:after, q:before, q:after{content:'';content:none}
     table{border-collapse:collapse;border-spacing:0}
-    /* Reset CSS End */
+</style>
+<style>
     /* Common CSS */
     .clearfix:after{display:block;clear:both;height:0;content:''}
     a{display:block}
@@ -30,18 +26,34 @@ License: none (public domain)
     .tab li,.tab_sub li{float:left;width:16.6666666%;width:calc(100%/6);min-width:100px}
     .tab strong{display:inline-block;line-height:45px}
     .tab .link_tab{height:45px;margin:0 20px;box-sizing:border-box}
-
     .tab:hover+.tab_sub{display:block}
     .tab_sub:hover{display:block}
     .tab_sub{display:none}
     .tab_sub ul{background-color:rgba(255,255,255,.5);height:auto}
     .tab_sub .link_item{display:block;box-sizing:border-box;height:45px}
     .tab_sub .link_item:hover{border:1px solid green}
-    .tab_sub span{display:block;text-align:center;vertical-align:middle;height:45px;line-height:45px}
+    .tab_sub span{display:block;text-align:center;height:45px;line-height:45px}
     main{margin-top:86px}
+    main section{margin:0 auto}
+    .about_company > strong{font-size:32px}
+    .about_company ul{font-size:0}
+    .about_company ul > strong{font-size:16px}
+    .about_company li{display:inline-block;width:25%;border:1px solid #ededed;box-sizing:border-box;padding-bottom:10%;border-radius:50px}
+    .about_company li > strong{display:table-cell;height:100px;vertical-align:bottom}
+    .schedule_company{border:3px solid #2f5188}
+    .schedule_company .estimate_condition{float:left;width:50%}
+    .schedule_company .estimate_condition caption{font-size:20px;text-align:left}
+    .schedule_company .estimate_condition thead{border-bottom:2px solid grey}
+    .schedule_company .estimate_condition tbody tr{border-bottom:1px solid grey} 
+    .schedule_company .online_request{float:right;width:50%}
+    .schedule_company .online_request strong{font-size:40px;font-weight:bold;color:#24abdd}
+    .schedule_company .online_request li{font-size:30px;color:#617a9b}
+    .schedule_company .online_request .wrap_img{float:left;width:50%}
+    .schedule_company .online_request .wrap_btn{float:right;width:50%}
+    .schedule_company .online_request .link_request{margin:0 auto;font-size:30px;width:160px;height:40px;border:2px solid #1b437a;text-align:center}
 </style>
 <header>
-    <h1 class="page_title">별빛청소</h1>
+    <h1 class="page_title">NKSC</h1>
     <div class="tab">
         <ul class="clearfix">
             <li class="on">
@@ -127,7 +139,146 @@ License: none (public domain)
         </ul>
     </div>
 </header>
-<!-- for Test -->
-<main style="background-color:tan;height:1500px;width:100%">
+<img src="https://dummyimage.com/1960x860/24248c/fff" width="100%" alt="">
 
+<main>
+    <section class="about_company">
+        <strong>Best Cleaning Company</strong><br>
+        아름다운 공간, 행복한 생활, 믿음과 신뢰, 한결같은 마음으로 고객과 함께 하겠습니다.
+        <ul>
+            <li>
+                <strong>분야별 전문성 향상</strong>
+                <img src="https://dummyimage.com/280x360/24248c/fff" width="100%" alt="">
+            </li>
+            <li>
+                <strong>전문인력 투입</strong>
+                <img src="https://dummyimage.com/280x360/24248c/fff" width="100%" alt="">
+            </li>
+            <li>
+                <strong>철저한 사후관리</strong>
+                <img src="https://dummyimage.com/280x360/24248c/fff" width="100%" alt="">
+            </li>
+            <li>
+                <strong>환경, 상황 변환에<br>적극적 대처 관리</strong>
+                <img src="https://dummyimage.com/280x360/24248c/fff" width="100%" alt="">
+            </li>
+        </ul>
+    </section>
+    <section class="schedule_company clearfix">
+        <table class="estimate_condition">
+            <caption>견적현황</caption>
+            <thead>
+                <tr>
+                    <th>발주처</th>
+                    <th>분야</th>
+                    <th>지역</th>
+                    <th>예약일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>엔젤고등학교</td>
+                    <td>숙직용역</td>
+                    <td>천상계</td>
+                    <td>2018.02.01</td>
+                </tr>
+                <tr>
+                    <td>엔젤고등학교</td>
+                    <td>본관 및 화장실 청소</td>
+                    <td>천상계</td>
+                    <td>2018.02.01</td>
+                </tr>
+                <tr>
+                    <td>엔젤고등학교</td>
+                    <td>본관 및 화장실 청소</td>
+                    <td>천상계</td>
+                    <td>2018.02.01</td>
+                </tr>
+                    <tr>
+                        <td>엔젤고등학교</td>
+                        <td>본관 및 화장실 청소</td>
+                        <td>천상계</td>
+                        <td>2018.02.01</td>
+                    </tr>
+                    <tr>
+                        <td>엔젤고등학교</td>
+                        <td>본관 및 화장실 청소</td>
+                        <td>천상계</td>
+                        <td>2018.02.01</td>
+                    </tr>
+                    <tr>
+                        <td>엔젤고등학교</td>
+                        <td>본관 및 화장실 청소</td>
+                        <td>천상계</td>
+                        <td>2018.02.01</td>
+                    </tr>
+                    <tr>
+                        <td>엔젤고등학교</td>
+                        <td>본관 및 화장실 청소</td>
+                        <td>천상계</td>
+                        <td>2018.02.01</td>
+                    </tr>
+                    <tr>
+                        <td>엔젤고등학교</td>
+                        <td>본관 및 화장실 청소</td>
+                        <td>천상계</td>
+                        <td>2018.02.01</td>
+                    </tr>
+                    <tr>
+                        <td>엔젤고등학교</td>
+                        <td>본관 및 화장실 청소</td>
+                        <td>천상계</td>
+                        <td>2018.02.01</td>
+                    </tr>
+                    <tr>
+                        <td>엔젤고등학교</td>
+                        <td>본관 및 화장실 청소</td>
+                        <td>천상계</td>
+                        <td>2018.02.01</td>
+                    </tr>
+            </tbody>
+        </table>
+        <div class="online_request">
+            <strong>온라인 문의</strong>
+            <ul>
+                <li>
+                    <span></span>
+                    최저비용
+                </li>
+                <li>
+                    <span></span>
+                    최고 만족 제공
+                </li>
+                <li>
+                    <span></span>
+                    최상의 친절 서비스 제공
+                </li>
+            </ul>
+            <div class="wrap_img">
+                <img src="https://dummyimage.com/280x240/24248c/fff">
+            </div>
+            <div class="wrap_btn">
+                <a href="javascript:void(0);" class="link_request">온라인 견적</a>
+            </div>
+        </div>
+    </section>
 </main>
+<footer>
+        <ul>
+            <li>개인정보방침</li>
+            <li>이용약관</li>
+            <li>회사소개</li>
+            <li>온라인문의</li>
+        </ul>
+        <strong>(주)엔케이에스씨</strong>
+        <dl>
+            <dt>대표이사</dt>
+            <dd>김지은</dd>
+            <dt>주소</dt>
+            <dd>경기도 수원시 권선구 탑동로 36번길 2</dd>
+            <dt>사업자 등록번호</dt>
+            <dd>845-81-00547</dd>
+        </dl>
+        
+        Copyright &copy; Nksc All Rights Reserved.
+</footer>
