@@ -1,35 +1,15 @@
-<div>로고</div>
+<header th:fragment="headerFragment">
+	<ul th:each="sitemap: ${siteMap}">
+		<li th:if="${sitemap.depth}==0">
+			<div th:text="${sitemap.id}"></div>
+			<a th:text="${sitemap.name}" th:href="@{'/board/'+${sitemap.name}+'/'}"></a>
+		</li>
+	</ul>
+	<a role="button" th:href="@{/login}" th:if="${session.admin}==null">관리자 로그인</a>
+	<a role="button" th:href="@{/logout}" th:if="${session.admin}">관리자 로그아웃</a>
 
-<ul>
-	<li>회사소개</li>
-	<li>공지사항</li>
-	<li>관리
-		<ul>
-			<li>경비</li>
-			<li>청소</li>
-			<li>시설</li>
-			<li>실적
-				<ul>
-					<li>경비</li>
-					<li>청소</li>
-					<li>시설</li>
-				</ul>
-			</li>
-		</ul>
-	</li>	
-	<li>대청소
-		<ul>
-			<li>입주청소</li>
-			<li>바닥청소</li>
-			<li>유리창청소</li>
-			<li>실적
-				<ul>
-					<li>학교</li>
-					<li>아파트</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li>온라인문의</li>
-	<li>지사문의</li>
-</ul>
+<div th:if="${session.admin}">
+	<a th:href="@{/text/onlineList}">온라인신청 현황</a>
+	<a th:href="@{/text/officeList}">지사모집 현황</a>
+</div>
+</header>

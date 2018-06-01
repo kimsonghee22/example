@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+
+<th:block th:if="${siteName}=='online'">
+	<div>
+	<form th:action="@{/text/onlineSubmit}">
+		<p> 발주처: <input type="text" name="name"/></p>
+		<p>분야: <input type="text" name="type"/></p>
+		<p>연락처: <input type="text" name="tel"/></p>
+		<p>이메일: <input type="text" name="email"/></p>
+		<p>주소: <input type="text" name="address"/></p>
+		<p>서비스 예약일: <input type="date" name="date"/></p>
+		<p>내용: <input type="text" name="content"/></p>
+		<p><input type="submit" value="등록"/></p>
+	</form>
+	</div>
+</th:block>
+
+<th:block th:if="${siteName}=='office'">
+	<div>
+	<form th:action="@{/text/officeSubmit}">
+		<p>이름: <input type="text" name="name"/></p>
+		<p>연락처: <input type="text" name="tel"/></p>
+		<p>사업분야: <input type="text" name="type"/></p>
+		<p>사업지역: <input type="text" name="address"/></p>
+		<p><input type="submit" value="등록"/></p>
+	</form>
+	</div>
+</th:block>

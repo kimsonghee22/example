@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+
+<table class="table">
+	<tr>
+		<td>id</td>
+		<td>name</td>
+		<td>content</td>
+		<td>createDate</td>
+	</tr>
+	<tr th:each="list: ${list}">
+		<td th:text="${list.id}"></td>
+		<td th:text="${list.name}"></td>
+		<td th:text="${list.content}"></td>
+		<td th:text="${list.createDate}"></td>
+	</tr>
+</table>

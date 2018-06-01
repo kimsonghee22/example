@@ -16,13 +16,17 @@ class IndexController {
 	@RequestMapping("/")
 	public String index(Model model) {
 		List board = sql.query("select * from nksc.board")
+		List siteMap = sql.query("select * from nksc.siteMap")
 		
+		model.addAttribute("siteMap", siteMap)
 		model.addAttribute("board", board)
 		return "index"
 	}
 	
 	@RequestMapping("/header")
-	public String header() {
+	public String header(Model model) {
+		List siteMap = sql.query("select * from nksc.siteMap")
+		model.addAttribute("siteMap", siteMap)
 		return "header"	
 	}
 	

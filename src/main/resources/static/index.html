@@ -1,6 +1,1 @@
-<div th:each="board: ${board}">	
-	<a th:href="@{/Board/(id=${board.id})}" th:text="${board.title}"></a>
-	
-</div>
-<hr/>
-<a th:href="@{/Board/insert}">추가</a>
+<header th:replace="header :: headerFragment"></header>

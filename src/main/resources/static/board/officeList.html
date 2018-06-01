@@ -1,0 +1,20 @@
+
+<table class="table">
+	<tr>
+		<td>id</td>
+		<td>name</td>
+		<td>tel</td>
+		<td>type</td>
+		<td>address</td>
+		<td>createDate</td>
+	</tr>
+	
+	<tr th:each="list: ${officeList}">
+		<td th:text="${list.id}"></td>
+		<td th:text="${list.name}"></td>
+		<td th:text="${list.tel}"></td>
+		<td th:text="${list.type}"></td>
+		<td th:text="${list.address}"></td>
+		<td th:text="${list.createDate}"></td>
+	</tr>
+</table>
