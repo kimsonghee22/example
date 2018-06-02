@@ -1,4 +1,4 @@
-<header th:fragment="headerFragment">
+<header th:fragment="head">
 	<ul th:each="sitemap: ${siteMap}">
 		<li th:if="${sitemap.depth}==0">
 			<div th:text="${sitemap.id}"></div>

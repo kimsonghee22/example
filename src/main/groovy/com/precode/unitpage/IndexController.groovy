@@ -20,19 +20,6 @@ class IndexController {
 		
 		model.addAttribute("siteMap", siteMap)
 		model.addAttribute("board", board)
-		return "index"
+		return "view/index"
 	}
-	
-	@RequestMapping("/header")
-	public String header(Model model) {
-		List siteMap = sql.query("select * from nksc.siteMap")
-		model.addAttribute("siteMap", siteMap)
-		return "header"	
-	}
-	
-	@RequestMapping("/footer")
-	public String footer() {
-		return "footer"
-	}
-
 }
