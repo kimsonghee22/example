@@ -1,0 +1,30 @@
+<head th:fragment="configFrame">
+
+<link rel="apple-touch-icon" sizes="57x57" href="/img/common/logo_57.png"/>
+<link rel="apple-touch-icon" sizes="72x72" href="/img/common/logo_72.png"/>
+<link rel="apple-touch-icon" sizes="114x114" href="/img/common/logo_114.png"/>
+<link rel="apple-touch-icon" sizes="144x144" href="/img/common/logo_144.png"/>
+<link rel="shortcut icon" href="/img/common/logo_32.png"/>
+<link rel="icon" sizes="16x16 32x32" href="/img/common/logo_32.png"/>
+
+<!-- CSS -->
+	<!-- Bootstrap CDN CSS -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"></link>
+	<!-- COMMON CSS-->
+	<link rel="stylesheet" type="text/css"	href="/css/reset.css"></link>
+	<link rel="stylesheet" type="text/css"	href="/css/common.css"></link>
+<!-- CUSTOM CSS -->
+<th:block layout:fragment="css"></th:block>
+ 
+	
+<!-- JAVASCRIPT -->
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<!-- Bootstrap CDN JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<!-- COMMON JAVASCRIPT -->
+	<script th:src="@{/js/common.js}"></script>
+<!-- CUSTOM JS -->
+<th:block layout:fragment="script"></th:block>
+
+</head>
