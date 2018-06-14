@@ -19,14 +19,16 @@ class BoardController {
 	@RequestMapping("/")
 	String view(@RequestParam Map params, Model model, @PathVariable String siteName) {
 		Map view = sql.row("select * from nksc.board where siteName=$siteName")
+		
 		model.addAttribute("view", view)
+		
 		
 		if(view.form=='list') {
 			List list = sql.query("select * from nksc."+view.siteName)
 			model.addAttribute("list", list)
 		}
 		
-		return "board/${view.form}"
+		return "/view/board/${view.form}"
 	}
 
 }

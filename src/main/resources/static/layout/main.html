@@ -1,15 +1,3 @@
-
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<!-- 사용자 CSS 추가 -->
-<th:block layout:fragment="css"></th:block>
- 
-<!-- 사용자 스크립트 추가 -->
-<th:block layout:fragment="script"></th:block>
-
-<main layout:fragment="bodyContainer">
-</main>
-
 <style>
     html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
     small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
@@ -98,37 +86,38 @@
     .ico_school{width:64px;height:64px;background-position-x:240px}
     .ico_apartment{width:64px;height:64px;background-position-x:320px}
 </style>
+<main th:fragment="bodyContainer">
 <header>
     <h1 class="page_title">NKSC</h1>
     <div class="tab">
         <ul class="clearfix">
             <li class="on">
-                  <a th:href="@{/board/info/}" class="link_tab">
+                <a href="javascript:void(0);" class="link_tab">
                     <strong>회사소개</strong>
                 </a>
             </li>
             <li>
-                   <a th:href="@{/board/notice/}" class="link_tab">
+                <a href="javascript:void(0);" class="link_tab">
                     <strong>공지사항</strong>
                 </a>
             </li>
             <li>
-                  <a th:href="@{/board/maintain/}" class="link_tab">
+                <a href="javascript:void(0);" class="link_tab">
                     <strong>관리</strong>
                 </a>
             </li>
             <li>
-                  <a th:href="@{/board/clean/}" class="link_tab">
+                <a href="javascript:void(0);" class="link_tab">
                     <strong>대청소</strong>
                 </a>
             </li>
             <li>
-                   <a th:href="@{/board/online/}" class="link_tab">
+                <a href="javascript:void(0);" class="link_tab">
                     <strong>온라인문의</strong>
                 </a>
             </li>
             <li>
-                  <a th:href="@{/board/office/}" class="link_tab">
+                <a href="javascript:void(0);" class="link_tab">
                     <strong>지사모집</strong>
                 </a>
             </li>
@@ -137,48 +126,49 @@
     <div class="tab_sub">
         <ul class="clearfix">
             <li>
-                 <a th:href="@{board/}" class="link_tab">
-								<span></span>
+                <a href="javascript:void(0);" class="link_item">
+
                 </a>
             </li>
             <li>
-                  <a th:href="@{board/}" class="link_tab">
-									<span></span>
+                <a href="javascript:void(0);" class="link_item">
+
                 </a>
             </li>
             <li>
-                 <a th:href="@{/board/maintain_guard/}" class="link_tab">
+                <a href="javascript:void(0);" class="link_item">
                     <span>경비</span>
                 </a>
-                   <a th:href="@{/board/maintain_clean/}" class="link_tab">
+                <a href="javascript:void(0);" class="link_item">
                     <span>청소</span>
                 </a>
-                  <a th:href="@{/board/maintain_pro/}" class="link_tab">
+                <a href="javascript:void(0);" class="link_item">
                     <span>시설</span>
                 </a>
-                  <a th:href="@{board/}" class="link_tab">
+                <a href="javascript:void(0);" class="link_item">
                     <span>실적</span>
                 </a>
             </li>
             <li>
-                 <a th:href="@{/board/clean_move}" class="link_tab">
+                <a href="javascript:void(0);" class="link_item">
                     <span>입주청소</span>
                 </a>
-                  <a th:href="@{/board/clean_floor/}" class="link_tab">
+                <a href="javascript:void(0);" class="link_item">
                     <span>바닥청소</span>
                 </a>
-                 <a th:href="@{/board/clean_window/}" class="link_tab">
+                <a href="javascript:void(0);" class="link_item">
                     <span>유리창청소</span>
                 </a>
-                 <a th:href="@{board/}" class="link_tab">
+                <a href="javascript:void(0);" class="link_item">
                     <span>실적</span>
                 </a>
             </li>
             <li>
-                   <a th:href="@{/board/online/}" class="link_tab"></a>
+                <a href="javascript:void(0);" class="link_item">
+                </a>
             </li>
             <li>
-                   <a th:href="@{/board/office/}" class="link_tab">
+                <a href="javascript:void(0);" class="link_item">
                 </a>
             </li>
         </ul>
@@ -188,7 +178,7 @@
     <img class="main_bnr" src="https://dummyimage.com/1960x860/24248c/fff" width="100%" alt=""/>
     <section class="online_bnr">
         <div class="wrap_bnr">
-            <a th:href="@{/board/online/}">온라인문의</a>
+            <a href="javascript:void(0);">온라인문의</a>
             <ul>
                 <li>
                     <span class="ico_company ico_security"></span><br/>
@@ -329,7 +319,7 @@
                 <img src="https://dummyimage.com/280x240/24248c/fff"/>
             </div>
             <div class="wrap_btn">
-                <a th:href="@{board/info}" class="link_request">온라인 견적</a>
+                <a href="javascript:void(0);" class="link_request">온라인 견적</a>
             </div>
         </div>
     </section>
@@ -355,7 +345,4 @@
         Copyright &copy; Nksc All Rights Reserved.
     </div>
 </footer>
-
-
-
-</html>
+</main>
