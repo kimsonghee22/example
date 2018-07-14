@@ -16,40 +16,33 @@ class LoginController {
 	@Autowired
 	Alert print = new Alert()
 	ExampleSql sql = new ExampleSql();
-	
+
 	@RequestMapping("login")
-	public String login() {	
-		return "login"
+	public String login() {
+		return "view/login/login"
 	}
-	
-		@RequestMapping("loginOk")
-	public String loginOk(HttpSession session, @RequestParam Map param, HttpServletResponse response) {
-		if(param.pwd=='123') {
+
+	@RequestMapping("loginOk")
+	public String loginOk(HttpSession session,HttpServletRequest request, @RequestParam Map params, HttpServletResponse response) {
+
+
+		if((params.adminId).equals("kimji")&&(params.pwd)=="70037003") {
 			session.setAttribute("admin", "admin")
-			print.alert(response, '관리자 로그인')
+			print.alert(response, '관리자 로그인 완료')
 		}else {
-			print.alert(response, '비밀번호 확인')
+			print.alert(response, '잘못 입력하셨습니다.')
+			String referer = request.getHeader("Referer");
 		}
-		
-		
-		return "login"
+		return "view/index"
 	}
-	
+
+
+
+
 	@RequestMapping("logout")
 	public String logout(HttpSession session, HttpServletResponse response,  HttpServletRequest request, Model model) {
 		session.invalidate();
-		print.alert(response, '관리자 로그아웃')
-		
-	/*	String referer = request.getHeader("Referer")
-		return "redirect:" + referer
-	*/
-		List board = sql.query("select * from nksc.board")
-		List siteMap = sql.query("select * from nksc.siteMap")
-		
-		model.addAttribute("siteMap", siteMap)
-		model.addAttribute("board", board)
-		return "index"
-			
+
+		return "view/index"
 	}
-	
 }

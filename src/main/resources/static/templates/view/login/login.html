@@ -1,4 +1,9 @@
-<form th:action="@{/loginOk}">
-	비밀번호 입력: <input type="password" name="pwd"/>
-	<input type="submit" value="로그인"/>
+
+<form th:action="@{/loginOk}" method="post">
+	AdminId: 
+	<input type="text" name="adminId" required="required"/><br/>
+	Password: 
+	<input type="password" name="pwd" required="required"/>
+	<input type="submit" value="Login"/>
+	
 </form>

@@ -1,4 +1,5 @@
-<header th:fragment="head">
+
+  <header th:fragment="head">
 	<h1><img src="/img/common/logo_head.png" alt="logo"/></h1>
 	<div class="tab">
 		<ul class="clearfix">
@@ -56,7 +57,7 @@
 				<a th:href="@{/board/maintain_pro/}" class="link_tab">
 					<span>시설</span>
 				</a>
-				<a th:href="@{board/}" class="link_tab">
+				<a th:href="@{/board/maintain_record/}" class="link_tab">
 					<span>실적</span>
 				</a>
 			</li>
@@ -70,16 +71,22 @@
 				<a th:href="@{/board/clean_window/}" class="link_tab">
 					<span>유리창청소</span>
 				</a>
-				<a th:href="@{board/}" class="link_tab">
+				<a th:href="@{/board/clean_record/}" class="link_tab">
 					<span>실적</span>
 				</a>
 			</li>
 			<li>
 				<a th:href="@{/board/online/}" class="link_tab"></a>
+		         <a th:href="@{/board/online/adminList}" class="link_tab">
+                   	 <span>온라인문의 현황</span>
+                   </a>
 			</li>
 			<li>
 				<a th:href="@{/board/office/}" class="link_tab">
 				</a>
+				 <a th:href="@{/board/office/adminList}" class="link_tab">
+                      <span>지사모집 현황</span>  
+	             </a>
 			</li>
 		</ul>
 	</div>

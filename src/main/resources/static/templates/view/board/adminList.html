@@ -21,37 +21,49 @@
       <col style="width:20%"/>
     </colgroup>
   
- 
-    <th:block th:if="${record}!=0">
+    <th:block th:if="${adminList}==0">
       <tr>
         <td>id</td>
         <td>name</td>
+        <td>type</td>
+        <td>tel</td>
+        <td>emain</td>
+        <td>date</td>
+        <td>address</td>
         <td>content</td>
         <td>createDate</td>
       </tr>
       <tr th:each="list: ${list}">
         <td th:text="${list.id}"></td>
-        <td><a th:href="@{/board/notice(listId=${list.id})}" th:text="${list.name}"></a></td>
+        <td th:text="${list.name}"></td>
+        <td th:text="${list.type}"></td>
+        <td th:text="${list.tel}"></td>
+        <td th:text="${list.email}"></td>
+        <td th:text="${list.date}"></td>
+        <td th:text="${list.address}"></td>
         <td th:text="${list.content}"></td>
         <td th:text="${list.createDate}"></td>
       </tr>
     </th:block>
     
-    
-    <th:block th:if="${record}==0">
+      <th:block th:if="${adminList}==1">
       <tr>
         <td>id</td>
         <td>name</td>
-        <td>content</td>
+        <td>tel</td>
+        <td>type</td>
+        <td>address</td>
+        <td>createDate</td>
       </tr>
-    
       <tr th:each="list: ${list}">
         <td th:text="${list.id}"></td>
         <td th:text="${list.name}"></td>
-        <td th:text="${list.content}"></td>
+        <td th:text="${list.tel}"></td>
+        <td th:text="${list.type}"></td>
+        <td th:text="${list.address}"></td>
+        <td th:text="${list.createDate}"></td>
       </tr>
     </th:block>
-    
 
 	<a th:text="글작성" th:href="@{'/board/'+${siteName}+'/write'}"></a>
 

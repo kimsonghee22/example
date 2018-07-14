@@ -5,6 +5,7 @@
 			<li>이용약관</li>
 			<li>회사소개</li>
 			<li>온라인문의</li>
+			<li><a th:if="${session.admin}" th:href="@{/logout}" th:text="로그아웃"></a></li>
 		</ul>
 		<strong>(주)엔케이에스씨</strong>
 		<dl>
@@ -20,7 +21,10 @@
 	</div>
 </footer>
 
-
+    
+    
+    
+    
 <!--<footer th:fragment="foot">-->
 	<!--<article class="footerContainer">-->
 		<!--<menu>-->
