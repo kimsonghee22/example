@@ -55,7 +55,7 @@ html{}
 a{display:block}
 /* Custom CSS */
 /* Header */
-header{position:fixed;top:0;width:100%;background-color:#fff}
+header{position:fixed;top:0;width:100%}
 
 a{color:black;text-decoration:none}
 a:hover{color:black}
@@ -125,9 +125,8 @@ footer dd,footer dt{display:inline-block}
 .ico_apartment{width:64px;height:64px;background-position-x:320px}
 
 
-/* 2018-07-14 */
 html{height:100%}
-body{position:relative;padding-top:100px;overflow-x:hidden;height:100%}
+body{position:relative;padding:100px 0 126px 0;overflow-x:hidden;height:100%}
 header,.main,footer{min-width:320px}
 header h1{float:left;padding:10px}
 header h1 img{width:100px;height:66px}
@@ -138,11 +137,11 @@ header{border-bottom:1px solid #e3e3e3}
 .tab li{display:table-cell;vertical-align:middle;text-align:center;height:86px}
 .tab li .link_tab{display:block}
 
-.tab_sub{padding-left:120px;border-top:1px solid #e3e3e3}
+.tab_sub{padding-left:120px;border-top:1px solid #e3e3e3;background-color:rgba(255,255,255,.5)}
 .tab_sub ul{display:table;width:100%;}
 .tab_sub li{display:table-cell;vertical-align:middle}
 
-.main{padding:0 30px 0 20px}
+.main{padding:0 30px 0 20px;height:100%;overflow-y:auto}
 .main .table_board{width:100%;text-align:center;margin-top:20px;border-collapse:collapse}
 .main .table_board,.main tr, .main td{border:1px solid #f3f3f3}
 .main tr:nth-child(even){background-color:#fafafa}
@@ -152,3 +151,7 @@ header{border-bottom:1px solid #e3e3e3}
 .footerContainer {margin-top:20px}
 footer{position:absolute;bottom:0;width:100%;}
 .wrap_footer{position:static}
+
+.box_form{margin-top:20px;padding:20px;border:1px solid #e3e3e3}
+.box_form p{padding-top:10px}
+.box_form input{display:block;width:100%;margin-top:10px}

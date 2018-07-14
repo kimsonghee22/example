@@ -1,20 +1,41 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"	content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
 
-<table class="table">
-	<tr>
-		<td>id</td>
-		<td th:text="${view.id}"></td>
-	</tr>
+<head th:replace = "config/mainConfigure :: configFrame">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+</head>
+
+<title>(주)엔케이에스씨</title>
+<body>
+<article th:replace = "view/header :: head"></article>
+<article layout:fragment = "bodyContainer" class="main">
+	<img src="https://dummyimage.com/1200x400/53b037/fff"/>
+	<table class="table">
+		<colgroup>
+			<col style="width:20%"/>
+			<col style="width:80%"/>
+		</colgroup>
 		<tr>
-		<td>siteName</td>
-		<td th:text="${view.siteName}"></td>
-	</tr>
-	<tr>
-		<td>name</td>
-		<td th:text="${view.name}"></td>
-	</tr>
-	<tr>
-		<td>content</td>
-		<td th:text="${view.content}"></td>
-	</tr>
-</table>
+			<td>id</td>
+			<td th:text="${view.id}"></td>
+		</tr>
+		<tr>
+			<td>siteName</td>
+			<td th:text="${view.siteName}"></td>
+		</tr>
+		<tr>
+			<td>name</td>
+			<td th:text="${view.name}"></td>
+		</tr>
+		<tr>
+			<td>content</td>
+			<td th:text="${view.content}"></td>
+		</tr>
+	</table>
+</article>
+<article th:replace = "view/footer :: foot"></article>
+</body>
+</html>

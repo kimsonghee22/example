@@ -1,30 +1,47 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"	content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
 
-<form th:action="@{insertOk}">
-<table class="table">
-	<tr>
-		<td>id</td>
-		<td><input name="id" readonly="readonly"/></td>
-	</tr>
-	
-	<tr>
-		<td>title</td>
-		<td><input name="title"/></td>
-	</tr>
-	
-	<tr>
-		<td>content</td>
-		<td><input name="content"/></td>
-	</tr>
+<head th:replace = "config/mainConfigure :: configFrame">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+</head>
 
-	<tr>
-		<td>createDate</td>
-		<td><input name="createDate" readonly="readonly"/></td>
-	</tr>	
-</table>
+<title>(주)엔케이에스씨</title>
+<body>
+<article th:replace = "view/header :: head"></article>
+<article layout:fragment = "bodyContainer" class="main">
+	<img src="https://dummyimage.com/1200x400/53b037/fff"/>
+	<form th:action="@{insertOk}">
+		<table class="table">
+			<tr>
+				<td>id</td>
+				<td><input name="id" readonly="readonly"/></td>
+			</tr>
 
-<nav>
-	<input type="submit" value="추가"/>
-	<a th:href="@{/}">목록으로</a>
-</nav>
-</form>
+			<tr>
+				<td>title</td>
+				<td><input name="title"/></td>
+			</tr>
+
+			<tr>
+				<td>content</td>
+				<td><input name="content"/></td>
+			</tr>
+
+			<tr>
+				<td>createDate</td>
+				<td><input name="createDate" readonly="readonly"/></td>
+			</tr>
+		</table>
+
+		<nav>
+			<input type="submit" value="추가"/>
+			<a th:href="@{/}">목록으로</a>
+		</nav>
+	</form>
+</article>
+<article th:replace = "view/footer :: foot"></article>
+</body>
+</html>

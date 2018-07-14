@@ -1,28 +1,45 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"	content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
 
-<th:block th:if="${siteName}=='online'">
-	<div>
-	<form th:action="@{/text/onlineSubmit}">
-		<p> 발주처: <input type="text" name="name"/></p>
-		<p>분야: <input type="text" name="type"/></p>
-		<p>연락처: <input type="text" name="tel"/></p>
-		<p>이메일: <input type="text" name="email"/></p>
-		<p>주소: <input type="text" name="address"/></p>
-		<p>서비스 예약일: <input type="date" name="date"/></p>
-		<p>내용: <input type="text" name="content"/></p>
-		<p><input type="submit" value="등록"/></p>
-	</form>
-	</div>
-</th:block>
+<head th:replace = "config/mainConfigure :: configFrame">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+</head>
 
-<th:block th:if="${siteName}=='office'">
-	<div>
-	<form th:action="@{/text/officeSubmit}">
-		<p>이름: <input type="text" name="name"/></p>
-		<p>연락처: <input type="text" name="tel"/></p>
-		<p>사업분야: <input type="text" name="type"/></p>
-		<p>사업지역: <input type="text" name="address"/></p>
-		<p><input type="submit" value="등록"/></p>
-	</form>
-	</div>
-</th:block>
+<title>(주)엔케이에스씨</title>
+<body>
+<article th:replace = "view/header :: head"></article>
+<article layout:fragment = "bodyContainer" class="main">
+	<img src="https://dummyimage.com/1200x400/53b037/fff"/>
+	<th:block th:if="${siteName}=='online'">
+		<div class="box_form">
+			<form th:action="@{/text/onlineSubmit}">
+				<p>발주처: <input type="text" name="name"/></p>
+				<p>분야: <input type="text" name="type"/></p>
+				<p>연락처: <input type="text" name="tel"/></p>
+				<p>이메일: <input type="text" name="email"/></p>
+				<p>주소: <input type="text" name="address"/></p>
+				<p>서비스 예약일: <input type="date" name="date"/></p>
+				<p>내용: <input type="text" name="content"/></p>
+				<p><input type="submit" value="등록"/></p>
+			</form>
+		</div>
+	</th:block>
+
+	<th:block th:if="${siteName}=='office'">
+		<div>
+			<form th:action="@{/text/officeSubmit}">
+				<p>이름: <input type="text" name="name"/></p>
+				<p>연락처: <input type="text" name="tel"/></p>
+				<p>사업분야: <input type="text" name="type"/></p>
+				<p>사업지역: <input type="text" name="address"/></p>
+				<p><input type="submit" value="등록"/></p>
+			</form>
+		</div>
+	</th:block>
+</article>
+<article th:replace = "view/footer :: foot"></article>
+</body>
+</html>
