@@ -27,7 +27,7 @@
     </thead>
     <tbody>
       <tr th:each="list: ${list}">
-        <td><a th:href="@{'/board/'+${list.siteName}(record=0)}" th:text="${list.title}"></a></td>
+        <td><a th:href="@{'/board/'+${list.siteName}(record=0, beSiteName=${siteName})}" th:text="${list.title}"></a></td>
       </tr>
     </tbody>
     <tfoot>

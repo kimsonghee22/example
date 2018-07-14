@@ -1,5 +1,7 @@
 package com.precode.unitpage
 
+import java.util.Map
+
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 import javax.servlet.http.HttpSession
@@ -47,11 +49,17 @@ class BoardController {
 			return "view/board/view"
 		}
 
-		if(view.form=='list') {
+		int hrefRecord = 0;
 
+		if(view.form=='list') {
 			if(params.record) {
-				model.addAttribute("record", params.record)
+				if((params.beSiteName).equals("clean_record")) {
+					hrefRecord=2
+				}else if((params.beSiteName).equals("maintain_record")) {
+					hrefRecord=1
+				}
 			}
+			model.addAttribute("hrefRecord", hrefRecord)
 			list = sql.query("select * from nksc."+view.siteName)
 			model.addAttribute("list", list)
 		}
@@ -93,16 +101,28 @@ class BoardController {
 			Aprint.alert(response, "관리자 로그인이 필요합니다.")
 			return "view/login/login"
 		}
-	
-		if(siteName.equals("notice")) {
-			sql.execute("insert into nksc.notice (name, content) values ($params.name, $params.content)")
-		}else if(params.record) {
-			sql.execute("insert into nksc."+siteName+"values (${params.name,)
-		}
-	
-		return "view/index"
-		
-	}
 
+		return "view/board/write"
+	}
+	
+	
+	@RequestMapping("writeOk")
+	String writeOk(@RequestParam Map params,@PathVariable String siteName, HttpServletRequest request, Model model, HttpSession session, HttpServletResponse response) {
+
+		if(!session.getAttribute("admin")) {
+			Aprint.alert(response, "관리자 로그인이 필요합니다.")
+			return "view/login/login"
+		}
+
+		if(siteName.equals("notice")) {
+			sql.execute("insert into nksc.notice (name, content) values ($params.name, $params.content)")	
+		}else if((params.beSiteName).equals("clean_record")) {
+			sql.execute("insert into nksc."+siteName+" (name, content, way, note) values ($params.name, $params.content, $params.way, $params.note)")
+		}else if((params.beSiteName).equals("maintain_record")) {
+			sql.execute("insert into nksc."+siteName+" (name, content, place) values ($params.name, $params.content, $params.place)")
+		}
+
+		return "view/index"
+	}
 
 }
