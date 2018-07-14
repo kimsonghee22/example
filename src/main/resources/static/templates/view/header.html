@@ -1,69 +1,156 @@
 <header th:fragment="head">
-	<article id="headerLogin">
-		<a th:href="@{/login}" th:if="${session.admin}==null">관리자 로그인</a>
-		<a th:href="@{/logout}" th:if="${session.admin}">관리자 로그아웃</a>
-		
-		<span th:if="${session.admin}">
-			<a th:href="@{/text/onlineList}">온라인신청 현황</a>
-			<a th:href="@{/text/officeList}">지사모집 현황</a>
-		</span>
-	</article>
-	
-	<article id="headerMenu">
-		<section class="header_logo">		
-			<h1><img src="/img/common/logo_head.png" alt="logo" /></h1>
-		</section>
-		<section class="header_menus">
-			<article class="header_menus_container mainMenu">
-				<menu>
-					<li><a>회사소개</a></li>
-					<li><a>공지사항</a></li>
-					<li><a>관리</a></li>
-					<li><a>대청소</a></li>
-					<li><a>온라인문의</a></li>
-					<li><a>지사모집</a></li>
-				</menu>
-			</article>
-			<article class="header_menus_container subMenu">
-				<menu>
-					<li><a>&nbsp;</a></li>
-					<li><a>&nbsp;</a></li>
-					<li>
-						<ul>
-							<li><a>경비</a></li>
-							<li><a>청소</a></li>
-							<li><a>시설</a></li>
-							<li><a>실적</a></li>
-						</ul>
-					</li>
-					<li>
-						<ul>
-							<li><a>입주청소</a></li>
-							<li><a>바닥청소</a></li>
-							<li><a>유리창청소</a></li>
-							<li><a>실적</a></li>
-						</ul>
-					</li>
-					<li><a>&nbsp;</a></li>
-					<li><a>&nbsp;</a></li>
-				</menu>
-			</article>
-			
-			
-		</section>
-	</article>
-	
-<!-- 	<ul th:each="sitemap: ${siteMap}">
-		<li th:if="${sitemap.depth}==0">
-			<div th:text="${sitemap.id}"></div>
-			<a th:text="${sitemap.name}" th:href="@{'/board/'+${sitemap.name}+'/'}"></a>
-		</li>
-	</ul>
-	<a role="button" th:href="@{/login}" th:if="${session.admin}==null">관리자 로그인</a>
-	<a role="button" th:href="@{/logout}" th:if="${session.admin}">관리자 로그아웃</a>
-
-<div th:if="${session.admin}">
-	<a th:href="@{/text/onlineList}">온라인신청 현황</a>
-	<a th:href="@{/text/officeList}">지사모집 현황</a>
-</div> -->
+	<h1><img src="/img/common/logo_head.png" alt="logo"/></h1>
+	<div class="tab">
+		<ul class="clearfix">
+			<li>
+				<a th:href="@{/board/info/}" class="link_tab">
+					<strong>회사소개</strong>
+				</a>
+			</li>
+			<li>
+				<a th:href="@{/board/notice/}" class="link_tab">
+					<strong>공지사항</strong>
+				</a>
+			</li>
+			<li>
+				<a th:href="@{/board/maintain/}" class="link_tab">
+					<strong>관리</strong>
+				</a>
+			</li>
+			<li>
+				<a th:href="@{/board/clean/}" class="link_tab">
+					<strong>대청소</strong>
+				</a>
+			</li>
+			<li>
+				<a th:href="@{/board/online/}" class="link_tab">
+					<strong>온라인문의</strong>
+				</a>
+			</li>
+			<li>
+				<a th:href="@{/board/office/}" class="link_tab">
+					<strong>지사모집</strong>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="tab_sub">
+		<ul class="clearfix">
+			<li>
+				<a th:href="@{board/}" class="link_tab">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a th:href="@{board/}" class="link_tab">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a th:href="@{/board/maintain_guard/}" class="link_tab">
+					<span>경비</span>
+				</a>
+				<a th:href="@{/board/maintain_clean/}" class="link_tab">
+					<span>청소</span>
+				</a>
+				<a th:href="@{/board/maintain_pro/}" class="link_tab">
+					<span>시설</span>
+				</a>
+				<a th:href="@{board/}" class="link_tab">
+					<span>실적</span>
+				</a>
+			</li>
+			<li>
+				<a th:href="@{/board/clean_move}" class="link_tab">
+					<span>입주청소</span>
+				</a>
+				<a th:href="@{/board/clean_floor/}" class="link_tab">
+					<span>바닥청소</span>
+				</a>
+				<a th:href="@{/board/clean_window/}" class="link_tab">
+					<span>유리창청소</span>
+				</a>
+				<a th:href="@{board/}" class="link_tab">
+					<span>실적</span>
+				</a>
+			</li>
+			<li>
+				<a th:href="@{/board/online/}" class="link_tab"></a>
+			</li>
+			<li>
+				<a th:href="@{/board/office/}" class="link_tab">
+				</a>
+			</li>
+		</ul>
+	</div>
 </header>
+
+<!--<header th:fragment="head">-->
+	<!--<article id="headerLogin">-->
+		<!--<a th:href="@{/login}" th:if="${session.admin}==null">관리자 로그인</a>-->
+		<!--<a th:href="@{/logout}" th:if="${session.admin}">관리자 로그아웃</a>-->
+		<!---->
+		<!--<span th:if="${session.admin}">-->
+			<!--<a th:href="@{/text/onlineList}">온라인신청 현황</a>-->
+			<!--<a th:href="@{/text/officeList}">지사모집 현황</a>-->
+		<!--</span>-->
+	<!--</article>-->
+	<!---->
+	<!--<article id="headerMenu">-->
+		<!--<section class="header_logo">		-->
+			<!--<h1><img src="/img/common/logo_head.png" alt="logo" /></h1>-->
+		<!--</section>-->
+		<!--<section class="header_menus">-->
+			<!--<article class="header_menus_container mainMenu">-->
+				<!--<menu>-->
+					<!--<li><a>회사소개</a></li>-->
+					<!--<li><a>공지사항</a></li>-->
+					<!--<li><a>관리</a></li>-->
+					<!--<li><a>대청소</a></li>-->
+					<!--<li><a>온라인문의</a></li>-->
+					<!--<li><a>지사모집</a></li>-->
+				<!--</menu>-->
+			<!--</article>-->
+			<!--<article class="header_menus_container subMenu">-->
+				<!--<menu>-->
+					<!--<li><a>&nbsp;</a></li>-->
+					<!--<li><a>&nbsp;</a></li>-->
+					<!--<li>-->
+						<!--<ul>-->
+							<!--<li><a>경비</a></li>-->
+							<!--<li><a>청소</a></li>-->
+							<!--<li><a>시설</a></li>-->
+							<!--<li><a>실적</a></li>-->
+						<!--</ul>-->
+					<!--</li>-->
+					<!--<li>-->
+						<!--<ul>-->
+							<!--<li><a>입주청소</a></li>-->
+							<!--<li><a>바닥청소</a></li>-->
+							<!--<li><a>유리창청소</a></li>-->
+							<!--<li><a>실적</a></li>-->
+						<!--</ul>-->
+					<!--</li>-->
+					<!--<li><a>&nbsp;</a></li>-->
+					<!--<li><a>&nbsp;</a></li>-->
+				<!--</menu>-->
+			<!--</article>-->
+			<!---->
+			<!---->
+		<!--</section>-->
+	<!--</article>-->
+	<!---->
+<!--<ul th:each="sitemap: ${siteMap}">-->
+		<!--<li th:if="${sitemap.depth}==0">-->
+			<!--<div th:text="${sitemap.id}"></div>-->
+			<!--<a th:text="${sitemap.name}" th:href="@{'/board/'+${sitemap.name}+'/'}"></a>-->
+		<!--</li>-->
+	<!--</ul>-->
+	<!--<a role="button" th:href="@{/login}" th:if="${session.admin}==null">관리자 로그인</a>-->
+	<!--<a role="button" th:href="@{/logout}" th:if="${session.admin}">관리자 로그아웃</a>-->
+
+<!--<div th:if="${session.admin}">-->
+	<!--<a th:href="@{/text/onlineList}">온라인신청 현황</a>-->
+	<!--<a th:href="@{/text/officeList}">지사모집 현황</a>-->
+<!--</div>-->
+<!--</header>-->

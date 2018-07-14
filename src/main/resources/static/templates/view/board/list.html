@@ -1,16 +1,50 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"	content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
 
-<table class="table">
-	<tr>
-		<td>id</td>
-		<td>name</td>
-		<td>content</td>
-		<td>createDate</td>
-	</tr>
-	<tr th:each="list: ${list}">
-		<td th:text="${list.id}"></td>
-		<td th:text="${list.name}"></td>
-		<td th:text="${list.content}"></td>
-		<td th:text="${list.createDate}"></td>
-	</tr>
-</table>
+<head th:replace = "config/mainConfigure :: configFrame">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+</head>
+
+<title>(주)엔케이에스씨</title>
+<body>
+<article th:replace = "view/header :: head"></article>
+<article layout:fragment = "bodyContainer" class="main">
+  <img src="https://dummyimage.com/1200x400/53b037/fff"/>
+  <table class="table_board">
+    <colgroup>
+      <col style="width:10%"/>
+      <col style="width:20%"/>
+      <col style="width:50%"/>
+      <col style="width:20%"/>
+    </colgroup>
+    <thead>
+      <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>content</td>
+        <td>createDate</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="list: ${list}">
+        <td th:text="${list.id}"></td>
+        <td th:text="${list.name}"></td>
+        <td th:text="${list.content}"></td>
+        <td th:text="${list.createDate}"></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4">페이징 부분</td>
+      </tr>
+    </tfoot>
+  </table>
+</article>
+<article th:replace = "view/footer :: foot"></article>
+</body>
+</html>
+
+
