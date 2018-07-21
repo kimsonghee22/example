@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<!-- 사용자 CSS 추가 -->
+<th:block layout:fragment="css"></th:block>
+
+<!-- 사용자 스크립트 추가 -->
+<th:block layout:fragment="script"></th:block>
+
+<main layout:fragment="bodyContainer">
+</main>
+
+<style>
+  html{min-width:1200px}
+  /* Common CSS */
+  .clearfix:after{display:block;clear:both;height:0;content:''}
+  a{display:block}
+  /* Custom CSS */
+  /* Header */
+  header{position:fixed;top:0;width:100%;background-color:#fff}
+  a{color:black;text-decoration:none}
+  a:hover{color:black}
+  a:visited{color:black}
+  .page_title{height:40px}
+  .tab ul{width:100%;text-align:center;border-bottom:1px solid lightgrey}
+  .tab li,.tab_sub li{float:left;width:16.6666666%;width:calc(100%/6);min-width:100px}
+  .tab strong{display:inline-block;line-height:45px}
+  .tab .link_tab{height:45px;margin:0 20px;box-sizing:border-box}
+  .tab:hover+.tab_sub{display:block}
+  .tab_sub:hover{display:block}
+  .tab_sub{display:none}
+  .tab_sub ul{background-color:rgba(255,255,255,.5);height:auto}
+  .tab_sub .link_item{display:block;box-sizing:border-box;height:45px}
+  .tab_sub .link_item:hover{border:1px solid green}
+  .tab_sub span{display:block;text-align:center;height:45px;line-height:45px}
+
+  main section{margin:0 auto}
+  main .online_bnr{background-color:#123761;height:100px}
+  main .wrap_bnr{width:1200px;margin:0 auto}
+  main .online_bnr a{width:150px;height:33px;border:2px solid #3f6794;border-radius:30px;text-align:center;vertical-align:top;padding-top:5px;float:left;margin:30px 150px 0 0;color:#fff;font-size:20px}
+  main .online_bnr ul{display:block;overflow:hidden;font-size:0}
+  main .online_bnr li{display:inline-block;color:#fff;margin:5px 12% 0 0;text-align:center;font-size:20px;font-weight:bold}
+
+
+  section{width:1200px;box-sizing:border-box}
+  .online_bnr{width:100%}
+  .about_company > strong{display:inline-block;font-size:32px;padding-top:30px;font-weight:bold}
+  .about_company ul{font-size:0;padding-top:25px}
+  .about_company ul > strong{font-size:16px}
+  .about_company li{float:right;width:280px;border:1px solid #ededed;box-sizing:border-box;padding-bottom:10%;border-radius:50px}
+  .about_company li > strong{display:block;padding-top:20px;height:80px;text-align:center}
+
+  .schedule_company{border:3px solid #2f5188}
+  .schedule_company .estimate_condition{float:left;width:50%}
+  .schedule_company .estimate_condition caption{font-size:20px;text-align:left}
+  .schedule_company .estimate_condition thead{border-bottom:2px solid grey}
+  .schedule_company .estimate_condition tbody tr{border-bottom:1px solid grey}
+  .schedule_company .online_request{float:right;width:50%}
+  .schedule_company .online_request strong{font-size:40px;font-weight:bold;color:#24abdd}
+  .schedule_company .online_request li{font-size:30px;color:#617a9b}
+  .schedule_company .online_request .wrap_img{float:left;width:50%}
+  .schedule_company .online_request .wrap_btn{float:right;width:50%}
+  .schedule_company .online_request .link_request{margin:0 auto;font-size:30px;width:160px;height:40px;border:2px solid #1b437a;text-align:center}
+
+  /* footer */
+  footer{margin-top:20px;padding:20px 0 10px;background:#474d54;color:#fff}
+  footer .wrap_footer{margin:0 auto;width:1200px}
+  footer ul{padding-bottom:10px}
+  footer li{display:inline-block}
+  footer li:before{content:" | ";margin:0 10px}
+  footer li:first-child:before{content:"";margin:0}
+  footer dl{padding-bottom:10px}
+  footer dd,footer dt{display:inline-block}
+  .wrap_footer dd:before{content:" | ";margin:0 10px}
+  .wrap_footer dd:first-child:before{content:"";margin:0}
+  .wrap_footer{position:relative}
+  .wrap_footer .ico_logo{position:absolute;bottom:0;right:0}
+
+  /* img_sprites */
+  .ico_company{display:inline-block;background: url(./ico_company.png)}
+  .wrap_bnr .ico_company{background-position-y:0}
+  .ico_security{width:64px;height:64px;background-position-x:0px}
+  .ico_clean{width:64px;height:64px;background-position-x:80px}
+  .ico_facility{width:64px;height:64px;background-position-x:160px}
+  .ico_school{width:64px;height:64px;background-position-x:240px}
+  .ico_apartment{width:64px;height:64px;background-position-x:320px}
+</style>
+<header>
+  <h1 class="page_title">NKSC</h1>
+  <div class="tab">
+    <ul class="clearfix">
+      <li class="on">
+        <a th:href="@{/board/info/}" class="link_tab">
+          <strong>회사소개</strong>
+        </a>
+      </li>
+      <li>
+        <a th:href="@{/board/notice/}" class="link_tab">
+          <strong>공지사항</strong>
+        </a>
+      </li>
+      <li>
+        <a th:href="@{/board/maintain/}" class="link_tab">
+          <strong>관리</strong>
+        </a>
+      </li>
+      <li>
+        <a th:href="@{/board/clean/}" class="link_tab">
+          <strong>대청소</strong>
+        </a>
+      </li>
+      <li>
+        <a th:href="@{/board/online/}" class="link_tab">
+          <strong>온라인문의</strong>
+        </a>
+      </li>
+      <li>
+        <a th:href="@{/board/office/}" class="link_tab">
+          <strong>지사모집</strong>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="tab_sub">
+    <ul class="clearfix">
+      <li>
+        <a th:href="@{board/}" class="link_tab">
+          <span></span>
+        </a>
+      </li>
+      <li>
+        <a th:href="@{board/}" class="link_tab">
+          <span></span>
+        </a>
+      </li>
+      <li>
+        <a th:href="@{/board/maintain_guard/}" class="link_tab">
+          <span>경비</span>
+        </a>
+        <a th:href="@{/board/maintain_clean/}" class="link_tab">
+          <span>청소</span>
+        </a>
+        <a th:href="@{/board/maintain_pro/}" class="link_tab">
+          <span>시설</span>
+        </a>
+        <a th:href="@{/board/maintain_record/}" class="link_tab">
+          <span>실적</span>
+        </a>
+      </li>
+      <li>
+        <a th:href="@{/board/clean_move}" class="link_tab">
+          <span>입주청소</span>
+        </a>
+        <a th:href="@{/board/clean_floor/}" class="link_tab">
+          <span>바닥청소</span>
+        </a>
+        <a th:href="@{/board/clean_window/}" class="link_tab">
+          <span>유리창청소</span>
+        </a>
+        <a th:href="@{/board/clean_record/}" class="link_tab">
+          <span>실적</span>
+        </a>
+      </li>
+
+      <li>
+        <a th:href="@{/board/online/}" class="link_tab"></a>
+        <a th:href="@{/board/online/adminList}" class="link_tab">
+          <span>온라인문의 현황</span>
+        </a>
+      </li>
+      <li>
+        <a th:href="@{/board/office/}" class="link_tab"></a>
+        <a th:href="@{/board/office/adminList}" class="link_tab">
+          <span>지사모집 현황</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+<main>
+  <img class="main_bnr" src="https://dummyimage.com/1960x860/24248c/fff" width="100%" alt=""/>
+  <section class="online_bnr">
+    <div class="wrap_bnr">
+      <a th:href="@{/board/online/}">온라인문의</a>
+      <ul>
+        <li>
+          <span class="ico_company ico_security"></span><br/>
+          경비
+        </li>
+        <li>
+          <span class="ico_company ico_clean"></span><br/>
+          청소
+        </li>
+        <li>
+          <span class="ico_company ico_facility"></span><br/>
+          시설
+        </li>
+        <li>
+          <span class="ico_company ico_school"></span><br/>
+          학교
+        </li>
+        <li>
+          <span class="ico_company ico_apartment"></span><br/>
+          아파트
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="about_company">
+    <strong>Best Cleaning Company</strong><br/>
+    아름다운 공간, 행복한 생활, 믿음과 신뢰, 한결같은 마음으로 고객과 함께 하겠습니다.
+    <ul class="clearfix">
+      <li>
+        <strong>분야별 전문성 향상</strong>
+        <img src="https://dummyimage.com/280x360/24248c/fff" width="100%" alt=""/>
+      </li>
+      <li>
+        <strong>전문인력 투입</strong>
+        <img src="https://dummyimage.com/280x360/24248c/fff" width="100%" alt=""/>
+      </li>
+      <li>
+        <strong>철저한 사후관리</strong>
+        <img src="https://dummyimage.com/280x360/24248c/fff" width="100%" alt=""/>
+      </li>
+      <li>
+        <strong>환경, 상황 변환에<br/>적극적 대처 관리</strong>
+        <img src="https://dummyimage.com/280x360/24248c/fff" width="100%" alt=""/>
+      </li>
+    </ul>
+  </section>
+  <section class="schedule_company clearfix">
+    <table class="estimate_condition">
+      <caption>견적현황</caption>
+      <thead>
+      <tr>
+        <th>발주처</th>
+        <th>분야</th>
+        <th>지역</th>
+        <th>예약일</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>엔젤고등학교</td>
+        <td>숙직용역</td>
+        <td>천상계</td>
+        <td>2018.02.01</td>
+      </tr>
+      <tr>
+        <td>엔젤고등학교</td>
+        <td>본관 및 화장실 청소</td>
+        <td>천상계</td>
+        <td>2018.02.01</td>
+      </tr>
+      <tr>
+        <td>엔젤고등학교</td>
+        <td>본관 및 화장실 청소</td>
+        <td>천상계</td>
+        <td>2018.02.01</td>
+      </tr>
+      <tr>
+        <td>엔젤고등학교</td>
+        <td>본관 및 화장실 청소</td>
+        <td>천상계</td>
+        <td>2018.02.01</td>
+      </tr>
+      <tr>
+        <td>엔젤고등학교</td>
+        <td>본관 및 화장실 청소</td>
+        <td>천상계</td>
+        <td>2018.02.01</td>
+      </tr>
+      <tr>
+        <td>엔젤고등학교</td>
+        <td>본관 및 화장실 청소</td>
+        <td>천상계</td>
+        <td>2018.02.01</td>
+      </tr>
+      <tr>
+        <td>엔젤고등학교</td>
+        <td>본관 및 화장실 청소</td>
+        <td>천상계</td>
+        <td>2018.02.01</td>
+      </tr>
+      <tr>
+        <td>엔젤고등학교</td>
+        <td>본관 및 화장실 청소</td>
+        <td>천상계</td>
+        <td>2018.02.01</td>
+      </tr>
+      <tr>
+        <td>엔젤고등학교</td>
+        <td>본관 및 화장실 청소</td>
+        <td>천상계</td>
+        <td>2018.02.01</td>
+      </tr>
+      <tr>
+        <td>엔젤고등학교</td>
+        <td>본관 및 화장실 청소</td>
+        <td>천상계</td>
+        <td>2018.02.01</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="online_request">
+      <strong>온라인 문의</strong>
+      <ul>
+        <li>
+          <span></span>
+          최저비용
+        </li>
+        <li>
+          <span></span>
+          최고 만족 제공
+        </li>
+        <li>
+          <span></span>
+          최상의 친절 서비스 제공
+        </li>
+      </ul>
+      <div class="wrap_img">
+        <img src="https://dummyimage.com/280x240/24248c/fff"/>
+      </div>
+      <div class="wrap_btn">
+        <a th:href="@{board/info}" class="link_request">온라인 견적</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap_footer">
+    <ul>
+      <li>개인정보방침</li>
+      <li>이용약관</li>
+      <li>회사소개</li>
+      <li>온라인문의</li>
+    </ul>
+    <strong>(주)엔케이에스씨</strong>
+    <dl>
+      <dt>대표이사</dt>
+      <dd>김지은</dd>
+      <dt>주소</dt>
+      <dd>경기도 수원시 권선구 탑동로 36번길 2</dd>
+      <dt>사업자 등록번호</dt>
+      <dd>845-81-00547</dd>
+    </dl>
+    <img class="ico_logo" src="https://dummyimage.com/160x130/24248c/fff"/>
+    Copyright &copy; Nksc All Rights Reserved.
+  </div>
+</footer>
+
+
+
+</html>

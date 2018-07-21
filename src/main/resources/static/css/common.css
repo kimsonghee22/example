@@ -1,61 +1,13 @@
-@charset "UTF-8";
-
-/* Bootstrap 관련 reset CSS **/
-
-/* header, footer, main 관련 COMMON CSS */
-/*html{width:100%;height:100%}*/
-/*body{width:100%;height:100%;min-height:100%}*/
-
-/*header{width:100%}*/
-/*header > article{width:100%;margin:0 auto}*/
-
-/*header > article#headerLogin{max-width:1700px;height:20px;line-height: 20px; font-size: 12px; text-align: right;}*/
-
-/*header > article#headerMenu{position: relative;}*/
-/*header > article#headerMenu > section.header_logo{position: relative; width: 1700px; margin: 0 auto;}*/
-/*header > article#headerMenu > section.header_logo > h1{position: absolute; left: 0; top: 0;}*/
-
-/*header > article#headerMenu > section.header_menus{position: relative; width: 100%; margin: 0 auto;}*/
-/*header > article#headerMenu > section.header_menus > article.header_menus_container{width: 100%; overflow: hidden;}*/
-/*header > article#headerMenu > section.header_menus > article.header_menus_container > menu{width: 980px; margin: 0 auto; text-align: center;}*/
-
-/*header > article#headerMenu > section.header_menus > article.header_menus_container.mainMenu{width: 100%; border-bottom: 1px solid #a4a4a4;}*/
-/*header > article#headerMenu > section.header_menus > article.header_menus_container.mainMenu > menu > li{display: inline-block; float: left; width: calc(100% / 6); height: 80px; line-height: 80px; font-size: 28px; font-weight: 600; color: #15161c;}*/
-
-/*header > article#headerMenu > section.header_menus > article.header_menus_container.subMenu{display: none; position: absolute; width: 100%; top: 80px; z-index: 999; border-bottom: 1px solid #eeeeee; background-color: rgba(244,244,244, .4);}*/
-/*header > article#headerMenu > section.header_menus > article.header_menus_container.subMenu > menu > li{display: inline-block; float: left; width: calc(100% / 6); font-size: 22px; font-weight: 400; color: #15161c;}*/
-/*header > article#headerMenu > section.header_menus > article.header_menus_container.subMenu > menu > li > ul li{height: 55px; line-height: 55px;}*/
-
-
-/*.main{position: relative; width: 100%; max-width: 1200px;}*/
-
-/*footer{position: relative; bottom: 0; width: 100%; background-color: #474d54;}*/
-/*footer > article{position: relative; width: 1200px; padding: 25px 25px 20px 25px; margin: 0 auto;}*/
-/*.footerContainer > menu{margin-bottom: 25px;}*/
-/*.footerContainer > menu > li{display: inline-block;}*/
-/*.footerContainer > menu > li:not(:last-child):after{display: inline-block; content: "|"; font-size: 12px; color: #fff; margin: 0 25px; margin-top: 3px; vertical-align: text-top;}*/
-/*.footerContainer > menu > li > a{font-size: 22px; color: #fff;}*/
-/*.footerContainer > h2{font-size: 23px; color: #fff; margin-bottom: 10px;}*/
-/*.footerContainer > ul{margin-bottom: 25px; font-size: 23px; color: #fff; margin-bottom: 10px;}*/
-/*.footerContainer > ul li{display: inline-block; font-size: 23px; color: #fff;}*/
-/*.footerContainer > ul li:not(:last-of-type):after{display: inline-block; content: "|"; font-size: 12px; color: #fff; margin: 0 27px; vertical-align: middle;}*/
-/*.footerContainer > ul li > b{font-weight: 400; margin-right: 10px;}*/
-/*.footerContainer > ul li > span{vertical-align: middle;}*/
-/*.footerContainer > span{font-size: 23px; color: #fff;}*/
-/*.footerContainer > img{position: absolute; bottom: 20px; right: 25px;}*/
-
-
-/*@media (max-width: 1700px) {*/
-  /*header > article#headerLogin{max-width: 100%; min-width: 720px;}*/
-/*}*/
-
 html{}
 /* Common CSS */
 .clearfix:after{display:block;clear:both;height:0;content:''}
 a{display:block}
 /* Custom CSS */
 /* Header */
-header{position:fixed;top:0;width:100%}
+header{position:fixed;top:0;width:100%;background-color:#fff;min-height:90px}
+header,.main,footer{min-width:320px}
+header h1{float:left;padding:10px}
+header h1 img{width:100px;height:66px}
 
 a{color:black;text-decoration:none}
 a:hover{color:black}
@@ -102,37 +54,29 @@ section{width:1200px;box-sizing:border-box}
 .schedule_company .online_request .link_request{margin:0 auto;font-size:30px;width:160px;height:40px;border:2px solid #1b437a;text-align:center}
 
 /* footer */
-footer{margin-top:20px;padding:20px 0 10px;background:#474d54;color:#fff}
+footer{margin-top:20px;padding:20px 0 10px;font-size:14px}
+footer dl{display:inline-block}
 footer .wrap_footer{margin:0 auto;width:1200px}
-footer ul{padding-bottom:10px}
-footer li{display:inline-block}
-footer li:before{content:" | ";margin:0 10px}
-footer li:first-child:before{content:"";margin:0}
-footer dl{padding-bottom:10px}
 footer dd,footer dt{display:inline-block}
-.wrap_footer dd:before{content:" | ";margin:0 10px}
-.wrap_footer dd:first-child:before{content:"";margin:0}
+.copyright{display:block}
+.wrap_footer dd:after{content:" | ";color:#9e9e9e;margin:0 5px}
+.wrap_footer dd:last-child:after{content:"";margin:0}
 .wrap_footer{position:relative}
 .wrap_footer .ico_logo{position:absolute;bottom:0;right:65px}
 
 /* img_sprites */
 .ico_company{display:inline-block;background: url(../img/center_shortcut/ico_company.png)}
 .wrap_bnr .ico_company{background-position-y:0}
-.ico_security{width:64px;height:64px;background-position-x:0px}
+.ico_security{width:64px;height:64px;background-position-x:0}
 .ico_clean{width:64px;height:64px;background-position-x:80px}
 .ico_facility{width:64px;height:64px;background-position-x:160px}
 .ico_school{width:64px;height:64px;background-position-x:240px}
 .ico_apartment{width:64px;height:64px;background-position-x:320px}
 
-
-html{height:100%}
-body{position:relative;padding:100px 0 126px 0;overflow-x:hidden;height:100%}
-header,.main,footer{min-width:320px}
-header h1{float:left;padding:10px}
-header h1 img{width:100px;height:66px}
+body{position:relative;padding:90px 0 126px 0;overflow-x:hidden;height:100%}
 
 header{border-bottom:1px solid #e3e3e3}
-.tab {overflow:hidden;}
+.tab {overflow:hidden}
 .tab ul{display:table;border:none}
 .tab li{display:table-cell;vertical-align:middle;text-align:center;height:86px}
 .tab li .link_tab{display:block}
@@ -149,7 +93,6 @@ header{border-bottom:1px solid #e3e3e3}
 .main > img {width:100%}
 
 .footerContainer {margin-top:20px}
-footer{position:absolute;bottom:0;width:100%;}
 .wrap_footer{position:static}
 
 .box_form{margin-top:20px;padding:20px;border:1px solid #e3e3e3}

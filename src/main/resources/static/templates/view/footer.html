@@ -1,24 +1,17 @@
 <footer th:fragment="foot">
-	<div class="wrap_footer">
-		<ul>
-			<li>개인정보방침</li>
-			<li>이용약관</li>
-			<li>회사소개</li>
-			<li>온라인문의</li>
-			<li><a th:if="${session.admin}" th:href="@{/logout}" th:text="로그아웃"></a></li>
-		</ul>
-		<strong>(주)엔케이에스씨</strong>
-		<dl>
-			<dt>대표이사</dt>
-			<dd>김지은</dd>
-			<dt>주소</dt>
-			<dd>경기도 수원시 권선구 탑동로 36번길 2</dd>
-			<dt>사업자 등록번호</dt>
-			<dd>845-81-00547</dd>
-		</dl>
-		<img class="ico_logo" src="/img/common/logo_foot.png"/>
-		Copyright &copy; Nksc All Rights Reserved.
-	</div>
+  <div class="wrap_footer">
+      <div><a th:if="${session.admin}" th:href="@{/logout}" th:text="로그아웃"></a></div>
+    <strong>(주)엔케이에스씨</strong>
+    <dl>
+      <dt>대표이사</dt>
+      <dd>김지은</dd>
+      <dt>주소</dt>
+      <dd>경기도 수원시 권선구 탑동로 36번길 2</dd>
+      <dt>사업자 등록번호</dt>
+      <dd>845-81-00547</dd>
+    </dl>
+		<span class="copyright">Copyright &copy; Nksc All Rights Reserved.</span>
+  </div>
 </footer>
 
     
@@ -26,20 +19,20 @@
     
     
 <!--<footer th:fragment="foot">-->
-	<!--<article class="footerContainer">-->
-		<!--<menu>-->
-			<!--<li><a>개인정보방침</a></li>-->
-			<!--<li><a>이용약관</a></li>-->
-			<!--<li><a>회사소개</a></li>-->
-			<!--<li><a>온라인문의</a></li>-->
-		<!--</menu>-->
-		<!--<h2>(주)엔케이에스씨</h2>-->
-		<!--<ul>-->
-			<!--<li><b>대표이사</b><span>김지은</span></li>-->
-			<!--<li><b>주소</b><span>경기도 수원시 권선구 탑동로 36번길2</span></li>-->
-			<!--<li><b>사업자 등록번호</b><span>845-81-00547</span></li>-->
-		<!--</ul>-->
-		<!--<span>Copyright&copy;Nksc All Rights Reserved.</span>-->
-		<!--<img src="/img/common/logo_foot.png" alt="logo" />-->
-	<!--</article>-->
+  <!--<article class="footerContainer">-->
+    <!--<menu>-->
+      <!--<li><a>개인정보방침</a></li>-->
+      <!--<li><a>이용약관</a></li>-->
+      <!--<li><a>회사소개</a></li>-->
+      <!--<li><a>온라인문의</a></li>-->
+    <!--</menu>-->
+    <!--<h2>(주)엔케이에스씨</h2>-->
+    <!--<ul>-->
+      <!--<li><b>대표이사</b><span>김지은</span></li>-->
+      <!--<li><b>주소</b><span>경기도 수원시 권선구 탑동로 36번길2</span></li>-->
+      <!--<li><b>사업자 등록번호</b><span>845-81-00547</span></li>-->
+    <!--</ul>-->
+    <!--<span>Copyright&copy;Nksc All Rights Reserved.</span>-->
+    <!--<img src="/img/common/logo_foot.png" alt="logo" />-->
+  <!--</article>-->
 <!--</footer>-->
