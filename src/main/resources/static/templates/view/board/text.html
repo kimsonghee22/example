@@ -12,7 +12,7 @@
 <body>
 <article th:replace = "view/header :: head"></article>
 <article layout:fragment = "bodyContainer" class="main">
-	<img src="https://dummyimage.com/1200x400/53b037/fff"/>
+
 	<th:block th:if="${siteName}=='online'">
 		<div class="box_form">
 			<form th:action="@{/text/onlineSubmit}">
@@ -40,6 +40,6 @@
 		</div>
 	</th:block>
 </article>
-<article th:replace = "view/footer :: foot"></article>
+
 </body>
 </html>
